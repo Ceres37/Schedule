@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
           integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Hello, world!</title>
 </head>
 <body>
@@ -21,7 +21,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-                <a class="nav-link bg-success" href="#" style="color: white; border-radius: 5px; margin-right: 5px ">
+                <a class="nav-link bg-success" href="javascript: void(0)" style="color: white; border-radius: 5px; margin-right: 5px ">
                     1 курс <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
@@ -29,11 +29,11 @@
                     2 курс<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link bg-success " href="#" style="color: white; border-radius: 5px; margin-right: 5px">
+                <a class="nav-link bg-success " href="javascript: void(0)" style="color: white; border-radius: 5px; margin-right: 5px" onclick="generateTable(3)">
                     3 курс <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link bg-success " href="#" style="color: white; border-radius: 5px; margin-right: 5px">
+                <a class="nav-link bg-success " href="#" style="color: white; border-radius: 5px; margin-right: 5px" value="none">
                     4 курс<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
@@ -41,16 +41,12 @@
                     5 курс<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link bg-success dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-                   style="color: white; border-radius: 5px;">
-                    Преподаватели
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Жданкин Е.В</a>
-                    <a class="dropdown-item" href="#">Жданкин Е.В</a>
-                    <a class="dropdown-item" href="#">Жданкин Е.В</a>
-                </div>
+                <select class="form-control" id="listTeachers">
+                    <option value="none">Не выбрано!</option>
+                    @foreach($teachers as $teacher => $value)
+                        <option value="{{$teacher}}">{{$value}}</option>
+                        @endforeach
+                </select>
             </li>
             {{--<div  class = "date-group date"  data-provide = "datepicker navbar fixed-bottom" style="margin-left: 50px" >--}}
             {{--<input  type = "text"  class = "form-control" >--}}
@@ -77,5 +73,6 @@
         crossorigin="anonymous"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="{{asset('js/classes.js')}}"></script>
 </body>
 </html>
