@@ -4,11 +4,9 @@
         <table class="table table-reflow table-hover table-bordered table-sm">
             <thead>
             <tr id="listGroups">
-                <th>#</th>
             </tr>
             </thead>
             <tbody id="tableSubject">
-
             </tbody>
         </table>
     </div>
