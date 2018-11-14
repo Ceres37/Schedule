@@ -4,9 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Teacher extends Model
+class SubjectsTeacher extends Model
 {
-    protected $table = 'teachers';
+    protected $table = 'subjects_teachers';
     public $timestamps = false;
-    protected $guarded = [''];
 }

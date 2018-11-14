@@ -14,4 +14,5 @@
 Route::group(['prefix' => ''], function () {
 Route::get('/','MainController@schedule')->name('schedule');
 Route::get('showTable','MainController@showTable')->name('showTable');
+Route::get('getSubject','MainController@getSubject')->name('getSubject');
 });

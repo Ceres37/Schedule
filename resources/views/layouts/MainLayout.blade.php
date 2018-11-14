@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
           integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <script src="{{asset('js/moment.js')}}"></script>
     <title>Hello, world!</title>
 </head>
 <body>
@@ -54,12 +55,17 @@
                 <a class="nav-link bg-success" href="#" style="color: white; border-radius: 5px; margin-right: 5px">
                     5 курс<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown" style="margin-right:10px; width: 300px ">
                 <select class="form-control" id="listTeachers">
-                    <option value="none">Не выбрано!</option>
-                    @foreach($teachers as $teacher => $value)
-                        <option value="{{$teacher}}">{{$value}}</option>
-                        @endforeach
+                    <option value="none">Не выбран преподователь!</option>
+                    @foreach($teachers as $teacher)
+                        <option value="{{$teacher->id_teacher}}">{{$teacher->name}}</option>
+                    @endforeach
+                </select>
+            </li>
+            <li class="nav-item dropdown" style="margin-right:10px; width: 300px ">
+                <select class="form-control" id="listSubject">
+                    <option value="none">Не выбран предмет!</option>
                 </select>
             </li>
             {{--<div  class = "date-group date"  data-provide = "datepicker navbar fixed-bottom" style="margin-left: 50px" >--}}
